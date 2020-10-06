@@ -1,0 +1,49 @@
+const int buttonPin1= 2;
+const int buttonPin2= 4;
+int buttonState1= 0; // variable for reading the pushbutton status
+int buttonState2= 0;
+const int in1=8;
+const int in2=9;
+const int in3=12;
+const int in4=13;
+const int pwm1=3;
+const int pwm2=4;
+void setup() {
+// put your setup code here, to run once:
+pinMode(buttonPin1, INPUT);
+pinMode(buttonPin2, INPUT);
+pinMode(pwm1,OUTPUT);
+pinMode(pwm2,OUTPUT);
+pinMode(in1,OUTPUT);
+pinMode(in2,OUTPUT);
+pinMode(in3,OUTPUT);
+pinMode(in4,OUTPUT);
+}
+void loop() {
+// put your main code here, to run repeatedly:
+if ( buttonState1 == HIGH)
+{
+digitalWrite(in1,HIGH);
+digitalWrite(in2,LOW);
+digitalWrite(in3,HIGH);
+digitalWrite(in4,LOW);
+delay(10000);
+} else if( buttonState2==HIGH)
+{
+digitalWrite(in1,LOW);
+digitalWrite(in2,HIGH);
+digitalWrite(in3,LOW);
+digitalWrite(in4,HIGH);
+analogWrite(pwm1,255);
+delay(10000);
+24
+}
+else
+{
+digitalWrite(in1,LOW);
+digitalWrite(in2,LOW);
+digitalWrite(in3,LOW);
+digitalWrite(in4,LOW);
+analogWrite(pwm2,255);
+delay(1000);
+}}
